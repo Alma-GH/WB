@@ -1,7 +1,6 @@
 const getGoods = function () {
     const links = document.querySelectorAll(".navigation-link")
     const viewAll = document.querySelector("a.more")
-    
 
     const renderGoods = function(goods){
         const container = document.querySelector(".long-goods-list")
@@ -39,7 +38,6 @@ const getGoods = function () {
             }
         })
     }
-
     
 
     links.forEach(link => {
@@ -55,12 +53,11 @@ const getGoods = function () {
 
     viewAll?.addEventListener("click", e=>{
         e.preventDefault()
-        const val = "All"
-        const cat = ""
-        getData(cat,val)
+        getData()
     })
 
-    if(localStorage.getItem("goods") && window.location.pathname === "/goods.html") renderGoods(JSON.parse(localStorage.getItem("goods")))
+    if(localStorage.getItem("goods") && window.location.pathname === "/goods.html") 
+        renderGoods(JSON.parse(localStorage.getItem("goods")))
     
     
 }
